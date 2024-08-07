@@ -1,0 +1,101 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.converter {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+.converter h2 {
+    margin-bottom: 20px;
+    color: #005F6A;
+}
+.rate-inputs, .currency-selects {
+    display: flex;
+    gap: 20px; /* Space between the fields */
+    justify-content: space-between; /* Distribute space evenly */
+}
+.rate-inputs div, .currency-selects div {
+    flex: 1; /* Allow each input/select to grow equally */
+    display: flex;
+    flex-direction: column;
+}
+.rate-inputs div label, .currency-selects div label {
+    margin-bottom: 5px; /* Space between label and input */
+    text-align: left; /* Align label text to the left */
+}
+.rate-inputs input, .currency-selects select {
+    width: 100%; /* Make each input/select fill its container */
+    max-width: 150px; /* Set a max-width to limit size */
+    padding: 10px; /* Padding inside the input/select */
+    border: 1px solid #ddd; /* Border styling for consistency */
+    border-radius: 8px; /* Border radius for consistency */
+    font-size: 1rem; /* Font size consistency */
+}
+.converter input, .converter select, .converter button {
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 1rem;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.converter button {
+    background-color: #005F6A;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.converter button:hover {
+    background-color: #014a52;
+}
+.converter #result {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+.amount-section {
+    position: relative;
+    margin: 20px 0; /* Margin around the section */
+}
+.amount-section::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px; /* Thickness of the line */
+    background-color: #ddd; /* Color of the line */
+    position: absolute;
+    top: -10px; /* Adjust space above the line */
+    left: 0;
+}
+.amount-section label {
+    display: block;
+    margin-bottom: 5px; /* Space between label and input */
+    text-align: left; /* Align label text to the left */
+}
+@media (max-width: 480px) {
+    .converter {
+        padding: 15px 20px;
+    }
+    .converter h2 {
+        font-size: 1.5rem;
+    }
+    .converter input, .converter select, .converter button {
+        font-size: 0.9rem;
+    }
+    .rate-inputs, .currency-selects {
+        flex-direction: column;
+        gap: 10px; /* Adjusted gap for smaller screens */
+    }
+}

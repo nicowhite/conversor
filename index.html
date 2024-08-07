@@ -3,68 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nico`s PREX Currency Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Nico´s PREX Currency Converter</title>
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-        .converter {
-            background: white;
-            padding: 20px 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-        }
-        .converter h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-        .converter input, .converter select, .converter button {
-            margin: 10px 0;
-            padding: 12px;
-            font-size: 1rem;
-            width: 100%;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-        .converter button {
-            background-color: #0a488a;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .converter button:hover {
-            background-color: #0056b3;
-        }
-        .converter #result {
-            margin-top: 20px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .converter h2 {
-            color: #0a488a;
-        }
-        @media (max-width: 480px) {
-            .converter {
-                padding: 15px 20px;
-            }
-            .converter h2 {
-                font-size: 1.5rem;
-            }
-            .converter input, .converter select, .converter button {
-                font-size: 0.9rem;
-            }
-        }
+        /* Include the CSS here as updated above */
     </style>
 </head>
 <body>
@@ -72,29 +14,44 @@
 <div class="converter">
     <h2>Convertidor PREX</h2>
     
-    <label for="usdToArg">USD to ARG rate:</label>
-    <input type="number" id="usdToArg" value="1259" step="0.01">
+    <div class="rate-inputs">
+        <div>
+            <label for="usdToArg">USD to ARG rate:</label>
+            <input type="number" id="usdToArg" value="1259" step="0.01">
+        </div>
+        <div>
+            <label for="usdToUy">USD to UY rate:</label>
+            <input type="number" id="usdToUy" value="41.2" step="0.01">
+        </div>
+    </div>
 
-    <label for="usdToUy">USD to UY rate:</label>
-    <input type="number" id="usdToUy" value="41.2" step="0.01">
+    
+    <div class="amount-section">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount" required>
+    </div>
+    
+    <div class="currency-selects">
+        <div>
+            <label for="fromCurrency">From:</label>
+            <select id="fromCurrency">
+                <option value="ARG">ARG</option>
+                <option value="USD">USD</option>
+                <option value="UY">UY</option>
+            </select>
+        </div>
+        <div>
+            <label for="toCurrency">To:</label>
+            <select id="toCurrency">
+                <option value="UY">UY</option>
+                <option value="USD">USD</option>
+                <option value="ARG">ARG</option>
+            </select>
+        </div>
+    </div>
 
-    <label for="amount">Amount:</label>
-    <input type="number" id="amount" placeholder="Enter amount" required>
-    
-    <label for="fromCurrency">From:</label>
-    <select id="fromCurrency">
-        <option value="ARG">ARG</option>
-        <option value="USD">USD</option>
-        <option value="UY">UY</option>
-    </select>
-    
-    <label for="toCurrency">To:</label>
-    <select id="toCurrency">
-        <option value="UY">UY</option>
-        <option value="USD">USD</option>
-        <option value="ARG">ARG</option>
-    </select>
-    
+
+
     <button onclick="convertCurrency()">Convert</button>
     
     <h3 id="result"></h3>
