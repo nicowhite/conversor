@@ -86,6 +86,7 @@ body {
 }
 @media (max-width: 480px) {
     .converter {
+        height: 100vh;
         padding: 15px 20px;
     }
     .converter h2 {
